@@ -9,7 +9,7 @@ export const convertWordFiles = async (pathFile: string, extOutput: string, outp
   const fileName = path.basename(pathFile, extension);
   const fullName = path.basename(pathFile);
   const convertCommandLinux = 'timeout 6s ' + `${path.resolve(__dirname, 'utils', 'instdir', 'program', 'soffice.bin')} --headless --norestore --invisible --nodefault --nofirststartwizard --nolockcheck --nologo --convert-to ${extOutput} --outdir ${outputDir} '${pathFile}'`;
-  const convertCommandWindows = `${path.resolve(__dirname, 'utils', 'LibreOfficePortable', 'App', 'libreoffice', 'program', 'soffice.bin')} --headless --norestore --invisible --nodefault --nofirststartwizard --nolockcheck --nologo --convert-to ${extOutput} --outdir ${outputDir} "${pathFile}"`;
+  const convertCommandWindows = `${path.resolve('C:\\Users\\Empire\\Desktop\\CodeRelated\\empire-front', 'utils', 'LibreOfficePortable', 'App', 'libreoffice', 'program', 'soffice.bin')} --headless --norestore --invisible --nodefault --nofirststartwizard --nolockcheck --nologo --convert-to ${extOutput} --outdir ${outputDir} "${pathFile}"`;
 
   if (!fullName.match(/\.(doc|docx|pdf|odt)$/i)) {
     throw new Error('Invalid file format, see the documentation for more information.');
